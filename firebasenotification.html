@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+
+    <!-- Leave out Storage -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-storage.js"></script> -->
+
+   <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB5fNO6V659i4I5dd0qHPk2w5ZiRJVQ25Q",
+            authDomain: "zaidfirebase.firebaseapp.com",
+            databaseURL: "https://zaidfirebase.firebaseio.com",
+            projectId: "zaidfirebase",
+            storageBucket: "zaidfirebase.appspot.com",
+            messagingSenderId: "602696985551"
+        };
+        firebase.initializeApp(config);
+
+        const messaging = firebase.messaging();
+        messaging.requestPermission().then(function () {
+
+            console.log('Zaid Ahmad Firebase Token ');
+            return messaging.getToken();
+        }).then(function (token) {
+            console.log('Zaid Ahmad  token :-  '+ token)
+        }).catch(function (e) {
+            console.log(e)
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
