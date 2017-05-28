@@ -1,0 +1,6650 @@
+swagger: '2.0'
+
+info:
+  version: "1.0.3"
+  title: "MTBD Rest Services"
+  description:  DiGiSENSE Rest Services provides functional api extensions to DiGiSENSE Platform
+
+host: uat.mahindracloudlink.com
+basePath: /DigisenseMobileAPPAPI/api/
+schemes:
+  - https
+consumes:
+  - application/json
+  - image/png
+  - image/jpeg
+produces:
+  - application/json
+  - image/png
+  - image/jpeg
+  - application/zip
+
+parameters:
+  sessionToken:
+    name: token
+    in: header
+    description: token to be passed as a header
+    required: true
+    type: string
+    format: string
+  vehicleRegNo:
+    name: vehicleRegNo
+    in: path
+    description: vehicle Reg No
+    required: true
+    type: string
+    format: string
+  currentDate:
+    name: currentDate
+    in: query
+    description: startDate to track the vehicle
+    required: true
+    type: string
+    format: date
+  latitude:
+    name: latitude
+    in: query
+    description: latitude
+    required: true
+    type: string
+    format: number
+  longitude:
+    name: longitude
+    in: query
+    description: longitude
+    required: true
+    type: string
+    format: number
+  startDate:
+    name: startDate
+    in: query
+    description: startDate to track the vehicle
+    required: true
+    type: string
+    format: date
+  endDate:
+    name: endDate
+    in: query
+    description: endDate to track the vehicle
+    required: true
+    type: string
+    format: date
+  driverId:
+    name: driverId
+    in: path
+    description: driver Id
+    required: true
+    type: string
+    format: string
+  dealerId:
+    name: dealerId
+    in: path
+    description: dealer Id
+    required: true
+    type: string
+    format: string
+  userId:
+    name: userId
+    in: path
+    description: user Id
+    required: true
+    type: string
+    format: string
+  name:
+    name: name
+    in: path
+    required: true
+    description: geofence name
+    type: string
+    format: string
+  routeName:
+    name: routeName
+    in: path
+    required: true
+    description: Route name
+    type: string
+    format: string
+  tripName:
+    name: tripName
+    in: path
+    required: true
+    description: Trip name
+    type: string
+    format: string
+  status:
+    name: status
+    in: query
+    required: true
+    description: Trip status
+    type: string
+    format: string
+
+  activityId:
+    name: activityId
+    in: query
+    required: true
+    description: Trip activityId
+    type: string
+    format: string
+  usergroupid:
+    name: usergroupid
+    in: path
+    required: true
+    description: user group id
+    type: string
+    format: string
+
+paths:
+  /:
+    get:
+      summary: Return API version
+      responses:
+        200:
+          description: API version information
+          schema:
+            type: object
+            required:
+              - name
+              - version
+            properties:
+              name:
+                type: string
+              version:
+                type: string
+          examples:
+            application/json:
+              name:  Digisense API
+              version: "1.0"
+  /login:
+    post:
+      tags:
+      - Login
+      description: Login using Mahindra DiGiSENSE Credentials. Shall return an authentication and authorization token on success
+      parameters:
+        - name: usercredentials
+          in: body
+          required: true
+          description: The login credentials
+          schema:
+            $ref: '#/definitions/LoginCredentials'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/LoginSuccessResponse'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/LoginError'
+  /forgotPassword:
+    post:
+      tags:
+      - Login
+      description: Should use the standard forgot password for DiGiSENSE.
+      parameters:
+        - name: forgotusercredentials
+          in: body
+          required: true
+          description: The login credentials
+          schema:
+            $ref: '#/definitions/ForgotLoginCredentials'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+            format: string
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/LoginError'
+  /resetPassword:
+    post:
+      tags:
+      - Login
+      description: Should use the standard reset password for DiGiSENSE.
+      parameters:
+        - name: forgotusercredentials
+          in: body
+          required: true
+          description: The login credentials
+          schema:
+            $ref: '#/definitions/ResetLoginCredentials'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+            format: string
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/LoginError'
+  /changePassword:
+    post:
+      tags:
+      - Login
+      description: Should use the standard change password for DiGiSENSE.
+      parameters:
+        - name: changeusercredentials
+          in: body
+          required: true
+          description: The login credentials
+          schema:
+            $ref: '#/definitions/ChangeLoginCredentials'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+            format: string
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/LoginError'
+  /services:
+    get:
+      tags:
+        - ServiceAvailable
+      description: get list of available services for current logged in  user
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/service'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /services/{userId}:
+    get:
+      tags:
+        - ServiceAvailable
+      description: get list of available services for specific user
+      parameters:
+        - $ref: "#/parameters/userId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/services'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /userrole:
+    get:
+      tags:
+        - Role
+      description: get list of roles for current user.
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Role
+      description: add a role to current user.
+      parameters:
+        - name: roles
+          in: body
+          required: true
+          description: add roles
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /role:
+    get:
+      tags:
+        - Role
+      description: get list of roles.
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Role
+      description: create new roles.
+      parameters:
+        - name: roles
+          in: body
+          required: true
+          description: new roles
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /usergroups:
+    get:
+      tags:
+        - UserGroup
+      description: get avialable user groups.
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              type: string
+              format: string
+              description: user group id.
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /usergroups/{usergroupid}:
+    get:
+      tags:
+        - UserGroup
+      description: get user group details.
+      parameters:
+        - $ref: "#/parameters/usergroupid"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/UserGroup'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - UserGroup
+      description: get user group details.
+      parameters:
+        - $ref: "#/parameters/usergroupid"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: user group
+          in: body
+          required: true
+          description: user group
+          schema:
+            $ref: '#/definitions/UserGroup'
+      responses:
+        '200':
+          description: Success
+          schema:
+              $ref: '#/definitions/UserGroup'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - UserGroup
+      description: delete user group details.
+      parameters:
+        - $ref: "#/parameters/usergroupid"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /listVehicles:
+    get:
+      tags:
+        - Vehicle
+      description: Get the list of vehicles. All the vehicles under the login with  vehiclePlatform,  vehicleModel, variant, registration number, current status, last updated timestamp, last known location, priority alert status, current address of the location to be sent
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /listVehicles/mtbd:
+    get:
+      tags:
+        - Vehicle
+      description: Get the list of MTBD vehicles. All the vehicles under the login with  vehiclePlatform,  vehicleModel, variant, registration number, current status, last updated timestamp, last known location, priority alert status, current address of the location to be sent
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicles:
+    get:
+      tags:
+        - Vehicle
+      description: get list of vehicles
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicleMappingWithDriver/{vehicleRegNo}/{driverId}:
+    post:
+      tags:
+        - Vehicle
+      description: map vehicle with driver."
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/driverId"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/VehicleInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehiclesSummary/{vehicleRegNo}:
+    get:
+      tags:
+        - Vehicle
+      description: Summary information for the vehicle.
+                    vehicleRegNo=
+                    vehicleLastUsedOn=
+                    "If the Platform is MTBD information to be sent are
+                    totalUsage=
+                    vehicleRunningHours
+                     vehicleIdleHours"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehiclesSummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /liveVehicleInformation/{vehicleRegNo}:
+    get:
+      tags:
+        - Vehicle
+      description: Get the live vehicle parameters. A client which refresh this API at 1 minute to get latest information. Following information to be returned
+        vehicleRegNo
+        status
+        lastupdated
+        If the Platform is MTBD information to be sent are
+        highEngineTemperature
+        engineRPM
+        fuelLevel
+        vehicleHealth
+        fuelEfficiencyA
+        fuelEfficiencyB
+        averageVehicleSpeed
+        engineOilPressure
+        driverName
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/LiveVehicleInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicles/{vehicleRegNo}/driver:
+    get:
+      tags:
+        - Vehicle
+      description: get driver information for vehicle
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Driver'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicles/{vehicleRegNo}/dealers:
+    get:
+      tags:
+        - Dealers
+      description: get list of dealers for the current (based on platform and model). The list to be sorted in the distance from vehicle’s current location. Nearest dealer to be the first one in the response. Response should have dealer name, address, phone number, location(latitude, longitude)
+                  Get a list of parts available with dealers
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Dealer'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicles/dealers:
+    get:
+      tags:
+        - Dealers
+      description: get list of dealers for the current (based on platform and model). The list to be sorted in the distance from given location. Nearest dealer to be the first one in the response. Response should have dealer name, address, phone number, location(latitude, longitude)
+                  Get a list of parts available with dealers
+      parameters:
+         - $ref: "#/parameters/latitude"
+         - $ref: "#/parameters/longitude"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Dealer'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicles/{vehicleRegNo}/spares:
+    get:
+      tags:
+        - Spare
+      description: Get a list of spares for current vehicle (based on platform and model).
+        Response should include
+        Sparename
+        Spareid
+        Details
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Spare'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicles/{vehicleRegNo}/{dealerId}/sparesRequest:
+    post:
+      tags:
+        - Spare
+      description: Order a part. Should accept one value from list of options or “Others”. Additional information to be captured as “description” of service required, nearest landmark/location for arranging the service.Should cascade to dealer management network with selected dealer, location of vehicle, landmark and additional information.  Should  create a request number for tracking./12.05"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/dealerId"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: spares
+          in: body
+          required: true
+          description: spares
+          schema:
+            $ref: '#/definitions/Spare'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SparesWithServiceLocation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicleAlerts/{vehicleRegNo}:
+    get:
+      tags:
+        - VehicleAlerts
+      description: List of alerts for a given vehicle with
+                  Name, type, location, priority, timestamp. All the alerts specified for the given platform should be enumerated in the above mentioned format
+      parameters:
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeneralAlert'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /vehicleAlerts:
+    get:
+      tags:
+        - VehicleAlerts
+      description: get list of all vehicles alert.
+      parameters:
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleAlerts'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /reportSummary:
+    get:
+      tags:
+        - Report
+      description: Get Summary of reports for given platform
+            If the Platform is MTBD, report summary should contain
+            Vehiclemovement
+            Distance
+            Current month
+            Previous month
+            Total Usage
+            Current month
+            Previous month
+            Idle Time
+            Current month
+            Previous month
+            VehicleHealth
+            Totalbreakdowns occurred
+            Total breakdowns closed
+            Count for each status (Good/Bad/Warming)
+            Delivery
+            Planned =
+            Actual
+            Utilization percentage current month
+            Utilization percentage previous month
+            Number of deliveries current
+            Number of deliveries previous month
+            Driver Comparison
+            Driver Ranking
+            Distance Covered
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ReportSummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /reportSummary/mtbd:
+    get:
+      tags:
+        - Report
+      description: Get Summary of reports for MTBD platform
+            If the Platform is MTBD, report summary should contain
+            Vehiclemovement
+            Distance
+            Current month
+            Previous month
+            Total Usage
+            Current month
+            Previous month
+            Idle Time
+            Current month
+            Previous month
+            VehicleHealth
+            Totalbreakdowns occurred
+            Total breakdowns closed
+            Count for each status (Good/Bad/Warming)
+            Delivery
+            Planned =
+            Actual
+            Utilization percentage current month
+            Utilization percentage previous month
+            Number of deliveries current
+            Number of deliveries previous month
+            Driver Comparison
+            Driver Ranking
+            Distance Covered
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ReportSummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /journeysummary:
+    get:
+      tags:
+        - JourneySummary
+      description: Get Summary of reports for given platform
+            If the Platform is MTBD, report summary should contain
+            Vehiclemovement
+            Distance
+            Current month
+            Previous month
+            Total Usage
+            Current month
+            Previous month
+            Idle Time
+            Current month
+            Previous month
+            VehicleHealth
+            Totalbreakdowns occurred
+            Total breakdowns closed
+            Count for each status (Good/Bad/Warming)
+            Delivery
+            Planned =
+            Actual
+            Utilization percentage current month
+            Utilization percentage previous month
+            Number of deliveries current
+            Number of deliveries previous month
+            Driver Comparison
+            Driver Ranking
+            Distance Covered
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/JourneySummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /reportSummary/{vehicleRegNo}:
+    get:
+      tags:
+        - Report
+      description: get report summary of vehicles
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ReportSummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /report/{vehicleRegNo}:
+    get:
+      tags:
+        - Report
+      description: Every report information to be enumerated with Report type (bar,pie, line, table, Label) Name,  value series/values. The report should take default week (past 7 days)
+        "MTBD:" Vehicle Movement should send the following information
+        "Label :" Distance Travelled, "value:" 1500 KM   distanceTravelled
+        "Label :"  Average Speed, "value:" 45KMPH  averageSpeed
+        "Label :"  Driving Time,"value:" 250 Hours  drivingTime
+        "Label :"  Idle Time, "value:" 15 Hours   idleTime
+        "Label :"  Usage Time, "value:" 225 Hours   usageTime8.04"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ReportByVehicle'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /localrepair:
+    get:
+      tags:
+        - LocalRepair
+      description: Get a list of high level local repair types. Battery, Tyre Puncture, JumpStart…
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Repair'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /localrepair/{vehicleRegNo}:
+    get:
+      tags:
+        - LocalRepair
+      description: Get details of local repair done for the vehicle. Category/Title Battery, Date of repair, amount, repair station details"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RepairWithDetail'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    put:
+      tags:
+        - LocalRepair
+      description: Create a local repair entry with date, summary/description, expense amount, repair station details (address, phone)"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+         - name: spares
+           in: body
+           required: true
+           description: spares
+           schema:
+             $ref: '#/definitions/RepairWithDetailRequest'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RepairWithDetail'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /expenseCategory:
+    get:
+      tags:
+        - Expense
+      description: get list of available expense types.
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExpenseType'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Expense
+      description: get list of available expense types.
+      parameters:
+         - $ref: "#/parameters/sessionToken"
+
+         - name: expenseType
+           in: body
+           required: true
+           description: expense
+           schema:
+             $ref: '#/definitions/ExpenseType'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExpenseType'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /tripexpense/{vehicleRegNo}:
+    get:
+      tags:
+        - Expense
+      description: View incidental expenses for ongoing/completed trips"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExpenseDetails'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    put:
+      tags:
+        - Expense
+      description: Add incidental expenses by the driver.  This for an ongoing/completed trip. Inputs will be date, description, amount. New expenses should accumulate with existing expenses against label/category"
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/sessionToken"
+
+         - name: expense
+           in: body
+           required: true
+           description: expense
+           schema:
+             $ref: '#/definitions/Expense'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Expense'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /profile:
+    get:
+      tags:
+        - Profile
+      description: get user inforamtion"
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Profile
+      description: get user inforamtion.1"
+      parameters:
+        - name: profile inforamtion
+          in: body
+          required: true
+          description: profile inforamtion
+          schema:
+            $ref: '#/definitions/UserProfile'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /profile/{userId}:
+    get:
+      tags:
+        - Profile
+      description: get user inforamtion.2"
+      parameters:
+        - $ref: "#/parameters/userId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/UserProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - Profile
+      description: update user inforamtion.3"
+      parameters:
+        - name: profile inforamtion
+          in: body
+          required: true
+          description: profile inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Attribute'
+        - $ref: "#/parameters/userId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/UserProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+    delete:
+      tags:
+        - Profile
+      description: Delete user profile.4"
+      parameters:
+        - $ref: "#/parameters/userId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /driverProfiles:
+    get:
+      tags:
+        - Profile
+      description: get drviers information"
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+                $ref: '#/definitions/DriverProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /driverProfiles/{driverId}:
+    get:
+      tags:
+        - Profile
+      description: get user information.1"
+      parameters:
+        - $ref: "#/parameters/driverId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/DriverProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - Profile
+      description: update user inforamtion.2"
+      parameters:
+        - $ref: "#/parameters/driverId"
+        - name: profile inforamtion
+          in: body
+          required: true
+          description: profile information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Attribute'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/DriverProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - Profile
+      description: Delete driver profile.3"
+      parameters:
+        - $ref: "#/parameters/driverId"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /driverProfiles/driver:
+    post:
+      tags:
+        - Profile
+      description: create driver information"
+      parameters:
+        - name: profile inforamtion
+          in: body
+          required: true
+          description: profile inforamtion
+          schema:
+            $ref: '#/definitions/DriverProfile'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/DriverProfileInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /profile/alertConfiguration:
+    get:
+      tags:
+        - Profile
+      description: get user alert Configuration information
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/AlertConfiguration'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - Profile
+      description: update  user alert configuration
+      parameters:
+        - name: alert configuration
+          in: body
+          required: true
+          description: profile information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AlertInfo'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+                $ref: '#/definitions/Attribute'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /alertConfiguration/{vehicleRegNo}:
+    get:
+      tags:
+        - AlertConfiguration
+      description: get vehicle alert Configuration information.2"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/AlertConfiguration'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - AlertConfiguration
+      description: update  vehicle alert configuration.3"
+      parameters:
+        - name: alert configuration
+          in: body
+          required: true
+          description: vehicle alert configuration
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AlertInfo'
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+           $ref: '#/definitions/AlertConfiguration'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+    put:
+      tags:
+        - AlertConfiguration
+      description: create/update  vehicle alert configuration.1"
+      parameters:
+        - name: alert configuration
+          in: body
+          required: true
+          description: vehicle alert configuration
+          schema:
+            $ref: '#/definitions/AlertConfiguration'
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/AlertConfiguration'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /locationHistory/{vehicleRegNo}:
+    get:
+      tags:
+        - LocationHistory
+      description: LocationHistory  For a given vehicle, get the waypoints along with date and timestamp. Inputs are start date, time and end date time."
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleLocationInfo'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /geofence:
+    post:
+      tags:
+        - GeoFence
+      description: Create GeoFence. The API takes 3 or more geographical points as input along with a unique name. Points should be within Indian Political boundaries. None of the points should be in ocean.
+      parameters:
+        - name: geofence
+          in: body
+          required: true
+          description: geofence inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeoFence'
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeoFence'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    get:
+      tags:
+        - GeoFence
+      description: Read GeoFence details. This provides points for the named geofence1"
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeoFence'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /geofence/{name}:
+    get:
+      tags:
+        - GeoFence
+      description: Read  GeoFence details.This provides points for the named geofence
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeoFence'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    patch:
+      tags:
+        - GeoFence
+      description: update the GeoFence.Add new points.Change existing points.Similar condition checks like 9.01.
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: points
+          in: body
+          required: true
+          description: profile inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Location'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GeoFence'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - GeoFence
+      description: Delete a named geofence. Cascade to mapping of vehicles to the corresponding geofence
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /geofence/vehicles:
+    get:
+      tags:
+        - GeoFence
+      description: Get Geofences for a given vehicle. Lists currently active geofences (based on the date)
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /geofence/{name}/vehicles:
+    get:
+      tags:
+        - GeoFence
+      description: Get vehicles mapped to a given geofence with dates.
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/startDate"
+        - $ref: "#/parameters/endDate"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    put:
+      tags:
+        - GeoFence
+      description: insert vehicle geofence
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: vehicle
+          in: body
+          required: true
+          description: vehicle information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfo'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - GeoFence
+      description: delete vehicle geofence(Delete a named geofence. Cascade to mapping of vehicles to the corresponding geofence)1"
+      parameters:
+        - $ref: "#/parameters/name"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: vehicleInfoId
+          in: body
+          required: true
+          description: vehicleInfoIds inforamtion
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /routePlan:
+    get:
+      tags:
+        - Route
+      description: Get all the available plans"
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Route'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Route
+      description: Create a route plan.  Routeplan takes options shortest/fastest/custom. In custom, for each point, there will be associated priority (None/1/2/3/4/5…) , pickup/delivery, location, contact
+        Name of the route
+        Toll Charges and expenses to be entered as “expenses”. "
+
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+        - name: route
+          in: body
+          required: true
+          description: route inforamtion
+          schema:
+            $ref: '#/definitions/RouteInformation'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RouteInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /routePlan/{routeName}:
+    get:
+      tags:
+        - Route
+      description: get Route information"
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RouteInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    put:
+      tags:
+        - Route
+      description: add points to the route/Update ongoing trip. Similar to Create Route. But applicable with existing points which are not marked with delivery/pick up completed could be either deleted. Or Additional pick up/delivery to be added. This has to create a new entry in the routeplan."
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: points
+          in: body
+          required: true
+          description: points for route inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RoutePoint'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RouteInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - Route
+      description: Delete Route.  Cascade to mapping of vehicles to the corresponding route for ongoing/upcoming"
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: points
+          in: body
+          required: true
+          description: points for route inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RoutePoint'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RouteInformation'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /routePlan/{routeName}/mapVehicle:
+    post:
+      tags:
+        - Route
+      description: Assign Route to one or more vehicles. Parameters are geofence-name, start date, end date, start time,end time and vehicle registration numbers. This creates one trip per vehicle for the given dates."
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: VehicleInfo
+          in: body
+          required: true
+          description: route inforamtion with vehicle
+          schema:
+            $ref: '#/definitions/VehicleInfo'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RouteDetail'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /routePlan/{routeName}/vehicles:
+    get:
+      tags:
+        - Route
+      description: Get vehicles (trip details) mapped to the given routeplan"
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Route
+      description: Assign Route to one or more vehicles. Parameters are geofence-name, start date, end date, start time,end time and vehicle registration numbers. This creates one trip per vehicle for the given dates.
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: points
+          in: body
+          required: true
+          description: points for route inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfo'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    delete:
+      tags:
+        - Route
+      description: delete vehicles from the route
+      parameters:
+        - $ref: "#/parameters/routeName"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: poiints
+          in: body
+          required: true
+          description: points for route inforamtion
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/vehicleInfoId'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VehicleInfoWithID'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /trip/{tripName}/{vehicleRegNo}:
+    get:
+      tags:
+        - TripManagement
+      description: Status Update- start trip.update the status of trip as started"
+      parameters:
+        - $ref: "#/parameters/tripName"
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TripPlan'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+
+  /trip/{tripName}/{vehicleRegNo}/status:
+    put:
+      tags:
+        - TripManagement
+      description: Status update- complete the trip./11.03"
+      parameters:
+        - $ref: "#/parameters/tripName"
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/status"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TripPlan'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /trip/{tripName}/{vehicleRegNo}/activity:
+    put:
+      tags:
+        - TripManagement
+      description: Status update- completed a delivery.  For a given trip for the vehicle, update a delivery/pick-up as done."
+      parameters:
+        - $ref: "#/parameters/tripName"
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/status"
+        - $ref: "#/parameters/activityId"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: activities
+          in: body
+          required: true
+          description: activity inforamtion
+          schema:
+            $ref: '#/definitions/RouteAction'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RouteActionWithId'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /breakDown/{vehicleRegNo}:
+    put:
+      tags:
+        - BreakDown
+      description: Add break down information for vehicle"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/LocationWithTimeStamp'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    get:
+      tags:
+        - BreakDown
+      description: update  Route trip status
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/startDate"
+        - $ref: "#/parameters/endDate"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/LocationWithTimeStamp'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicles/{vehicleRegNo}/spareRequest:
+    post:
+      tags:
+        - BreakDown
+      description: Get a list of parts available with dealers. For a given spare, get the nearest dealer address, and availability/7.02"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+        - name: spares
+          in: body
+          required: true
+          description: spares
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Spare'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SparesWithRequestId'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /dealers/spares:
+    get:
+      tags:
+        - BreakDown
+      description: Get a list of parts available with dealers. "
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Spare'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicles/{vehicleRegNo}/routes:
+    get:
+      tags:
+        - Route
+      description: View assigned trips for a vehicle. This should include geofences in the route for the date of travel. If it is a completed trip, show geofences active on that dates for the given geographical area of the route. This should include geofences active at that time, but deleted later. Also Live update on the notification in case of trip update from the server. Any update on the trip, has to be sent as push notification to the client"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RouteDetailWithTrip'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicles/{vehicleRegNo}/currenttrip:
+    get:
+      tags:
+        - Route
+      description: Live Trip details. Get the details/status of ongoing trip (started, delivery status, time)
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/RouteDetailWithTrip'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /reminders:
+    get:
+      tags:
+        - Reminder
+      description: Get all the reminders based on previous configuration for each vehicle"
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Reminders'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /reminders/{vehicleRegNo}:
+    get:
+      tags:
+        - Reminder
+      description: For a given vehicle, get all the reminders. Send additional information on fields which are editable for the current user"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Attributes'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+    post:
+      tags:
+        - Reminder
+      description: For a given vehicle, update the reminders"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Attributes'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicles/{vehicleRegNo}/currentRoute:
+    get:
+      tags:
+        - BreakDown
+      description: update  Route trip status
+      parameters:
+        - $ref: "#/parameters/currentDate"
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RouteDetail'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /trip:
+    get:
+      tags:
+        - TripManagement
+      description: get list of trips
+      parameters:
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Trip'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+
+  /trips/activetrip/{vehicleRegNo}:
+    get:
+      tags:
+        - TripManagement
+      description: Get active trip for a vehicle (based on the driver login, current date). Returns the status, current waypoints for the route, pickup/delivery details"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TripPlan'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /trip/{vehicleRegNo}/expense:
+    get:
+      tags:
+        - TripManagement
+      description: Expense Summary. For each trip (on-going/completed), get the expenses (as Label, Value Pairs). For MTBD, the request should send Fuel consumed, Mileage, Total Kilometers,Self-Expense,Breakdown Count"/11.07"
+      parameters:
+        - $ref: "#/parameters/vehicleRegNo"
+        - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExpenseSummary'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+  /vehicleTracking/{vehicleRegNo}:
+    get:
+      tags:
+        - TrackVehicle
+      description: For a given vehicle, get the list of locations for given date and time."
+      parameters:
+         - $ref: "#/parameters/vehicleRegNo"
+         - $ref: "#/parameters/startDate"
+         - $ref: "#/parameters/endDate"
+         - $ref: "#/parameters/sessionToken"
+
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/LocationWithTimeStamp'
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/BadRequest'
+        '401':
+          description: Error
+          schema:
+            $ref: '#/definitions/AuthFailed'
+        '429':
+          description: Error
+          schema:
+            $ref: '#/definitions/RateLimitError'
+        '302':
+          description: Error
+          schema:
+            $ref: '#/definitions/RedirectURL'
+        '500':
+          description: Error
+          schema:
+            $ref: '#/definitions/ServerError'
+        '503':
+          description: Error
+          schema:
+            $ref: '#/definitions/MaintenanceError'
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                description: Error code.
+              message:
+                type: string
+                description: Invalid request.
+definitions:
+
+  LoginCredentials:
+    required: [username, password]
+    properties:
+      username:
+        type: string
+        minLength: 1
+      password:
+        type: string
+        minLength: 1
+      remember_me:
+        type: boolean
+        description: remember user.
+
+  ForgotLoginCredentials:
+    properties:
+      username:
+        type: string
+      email:
+        type: string
+      phoneNumber:
+        type: integer
+
+  ResetLoginCredentials:
+    properties:
+      username:
+        type: string
+        minLength: 1
+      email:
+        type: string
+      phoneNumber:
+        type: integer
+      newPassword:
+        type: string
+        minLength: 1
+      otp:
+        type: string
+        minLength: 6
+  ChangeLoginCredentials:
+    properties:
+      username:
+        type: string
+        minLength: 1
+      email:
+        type: string
+      phoneNumber:
+        type: integer
+      oldPassword:
+        type: string
+        minLength: 1
+      newPassword:
+        type: string
+        minLength: 1
+
+
+  Vehicle:
+    type: object
+    properties:
+      vehiclePlatform:
+        type: string
+        format: string
+        description: vehicle Platform.
+      vehicleModel:
+        type: string
+        format: string
+        description: vehicle Model.
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      status:
+        type: string
+        format: string
+        description: current status.
+
+  VehicleInformation:
+    type: object
+    properties:
+      vehiclePlatform:
+        type: string
+        format: string
+        description: vehicle Platform.
+      vehicleModel:
+        type: string
+        format: string
+        description: vehicle Model.
+      vehicleVariant:
+        type: string
+        format: string
+        description: vehicle Variant.
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      status:
+        type: string
+        format: string
+        description: current status.
+        enum: [
+            "Running",
+            "Stopped",
+            "Idle",
+            "Not Used"
+          ]
+      lastupdated:
+        type: string
+        format: string
+        description: vehicle lat updated.
+      lastknownlocation:
+        $ref: '#/definitions/Location'
+      priorityAlertStatus:
+        type: boolean
+        format: boolean
+        description: Priority Alert Status.
+      address:
+        type: string
+        format: string
+        description: address of the route point.
+      speed:
+        type: string
+        format: string
+        description: speed of the vehicle
+      runningHours:
+        type: string
+        format: string
+        description: total running hours in Hours.
+      driverName:
+        type: string
+        format: string
+        description: Drover name.
+
+
+  vehicleInfoId:
+    type: string
+    format: string
+    description: vehicle info id
+  VehicleLocationInfo:
+    type: object
+    properties:
+      speed:
+        type: string
+        format: string
+        description: vehicle speed
+      address:
+        type: string
+        format: string
+        description: vehicle address
+      location:
+        $ref: '#/definitions/Location'
+      timestamp:
+        type: string
+        format: date-time
+        description: time stamp.
+
+
+  LocationWithTimeStamp:
+    type: object
+    properties:
+      longitude:
+        $ref: '#/definitions/Longitude'
+      latitude:
+        $ref: '#/definitions/Latitude'
+      timestamp:
+        type: string
+        format: date-time
+        description: time stamp.
+
+  Route:
+    type: object
+    properties:
+      routeId:
+        type: string
+        format: string
+        description: route ID
+      name:
+        type: string
+        format: string
+        description: name of the route.
+
+
+  RouteInformation:
+    type: object
+    properties:
+      routeId:
+        type: string
+        format: string
+        description: route ID
+      name:
+        type: string
+        format: string
+        description: name of the route.
+      routeOption:
+        type: array
+        items:
+          type: string
+          format: string
+          description: route options with options ["shortest","no-toll"].
+      points:
+        type: array
+        items:
+          $ref: '#/definitions/RoutePoint'
+
+  RouteDetailWithTrip:
+    type: object
+    properties:
+      routeDetail:
+        $ref: '#/definitions/RouteDetailWithGeoFence'
+      trip:
+        $ref: '#/definitions/TripPlan'
+
+  RouteDetail:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: route id.
+      name:
+        type: string
+        format: string
+        description: name of the route.
+      period:
+        type: string
+        format: string
+        description: Route time period
+      routeOption:
+        type: array
+        items:
+          type: string
+          format: string
+          description: route options with options ["shortest","no-toll"].
+      points:
+        type: array
+        items:
+          $ref: '#/definitions/RoutePoint'
+      assginedVehicles:
+        type: array
+        items:
+          $ref: '#/definitions/VehicleInfo'
+
+  RouteDetailWithGeoFence:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: route id.
+      name:
+        type: string
+        format: string
+        description: name of the route.
+      period:
+        type: string
+        format: string
+        description: Route time period
+      routeOption:
+        type: array
+        items:
+          type: string
+          format: string
+          description: route options with options ["shortest","no-toll"].
+      points:
+        type: array
+        items:
+          $ref: '#/definitions/RoutePoint'
+      geofences:
+        type: array
+        items:
+          $ref: '#/definitions/GeoFence'
+
+
+  RoutePoint:
+    type: object
+    properties:
+      routePointId:
+        type: string
+        format: string
+        description: route point id.
+      longitude:
+        $ref: '#/definitions/Longitude'
+      latitude:
+        $ref: '#/definitions/Latitude'
+      priority:
+        type: string
+        format: string
+        description: priority.
+      activity:
+        type: string
+        format: string
+        description:  activity
+        enum: [
+              "pickup",
+              "delivery",
+              "starting point",
+              "end point"
+              ]
+      address:
+        type: string
+        format: string
+        description: address of the route point.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+
+  TripPlan:
+    type: object
+    properties:
+      tripName:
+        type: string
+        format: string
+        description: trip Name.
+      tripstatus:
+        type: string
+        format: string
+        description: current trip status.
+      completed:
+        type: array
+        items:
+          $ref: '#/definitions/RouteActionWithId'
+      toComplete:
+        type: array
+        items:
+          $ref: '#/definitions/RouteActionWithId'
+      currentLocation:
+        $ref: '#/definitions/Location'
+
+  RouteActionWithId:
+    type: object
+    properties:
+      activityId:
+        type: string
+        format: string
+        description: activity Id
+      activity:
+        type: string
+        format: string
+        description: activity name.
+        enum: [
+          "pick up",
+          "delivery"
+          ]
+      plannedLocation:
+        $ref: '#/definitions/Location'
+      address:
+        type: string
+        format: string
+        description: address of the route point.
+      status:
+        type: string
+        format: string
+        description: current status of planned activity.
+  RouteAction:
+    type: object
+    properties:
+      activity:
+        type: string
+        format: string
+        description: activity name.
+        enum: [
+          "pick up",
+          "delivery"
+          ]
+      plannedLocation:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+          format: double
+          description: latitude longitude.
+      address:
+        type: string
+        format: string
+        description: address of the route point.
+      status:
+        type: string
+        format: string
+        description: current status of planned activity.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+
+
+  GeoFence:
+    type: object
+    properties:
+      name:
+        type: string
+        format: string
+        description: Name of the Geofence.
+      points:
+        type: array
+        items:
+          $ref: '#/definitions/Location'
+  Location:
+    type: object
+    properties:
+      longitude:
+        $ref: '#/definitions/Longitude'
+      latitude:
+        $ref: '#/definitions/Latitude'
+
+  Latitude:
+    type: number
+    format: double
+    description: latitude
+  Longitude:
+    type: number
+    format: double
+    description: longitude
+
+  VehiclesSummary:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      vehicleLastUsedOn:
+        type: string
+        format: date-time
+        description: Vehicle last used on.
+      totalUsage:
+        type: string
+        format: time
+        description: vehicle Total Usage.
+      vehicleRunningHours:
+        type: string
+        format: time
+        description: Vehicle Running Hours.
+      vehicleIdleHours:
+        type: string
+        format: time
+        description: Vehicle Idle Hours.
+
+  Trip:
+    type: object
+    properties:
+      tripName:
+        type: string
+        format: string
+        description: Name of the Trip
+      totalHours:
+        type: string
+        format: string
+        description: total hours for Trip in Hours.
+      distance:
+        type: string
+        format: string
+        description: Trip distance.
+      status:
+        type: string
+        format: string
+        description:  Trip status.
+      period:
+        type: string
+        format: string
+        description: Trip period.
+      vehicleDetail:
+        $ref: '#/definitions/LiveVehicleInformation'
+
+
+  LiveVehicleInformation:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      vehiclePlatform:
+        type: string
+        format: string
+        description: vehicle Platform.
+      vehicleModel:
+        type: string
+        format: string
+        description: vehicle Model.
+      vehicleVariant:
+        type: string
+        format: string
+        description: vehicle Variant.
+      status:
+        type: string
+        format: string
+        description: current status.
+        enum: [
+            "Running",
+            "Stopped",
+            "Idle",
+            "Not Used"
+          ]
+      lastupdated:
+        type: string
+        format: string
+        description: vehicle lat updated.
+      highEngineTemperature:
+        type: string
+        format: string
+        description: High Engine Temperature in Degress.
+      engineRPM:
+        type: integer
+        format: int64
+        description: Engine RPM.
+      fuelLevel:
+        type: string
+        format: string
+        description: Fuel Level in Liters.
+      vehicleHealth:
+        type: string
+        format: string
+        description: Vehicle Health.
+      fuelEfficiencyA:
+        type: string
+        format: string
+        description: Fuel Efficiency A in KMPL.
+      fuelEfficiencyB:
+        type: string
+        format: string
+        description: Fuel Efficiency B in KMPL.
+      averageVehicleSpeed:
+        type: string
+        format: string
+        description: Average Vehicle Speed in KMPH.
+      engineOilPressure:
+        type: string
+        format: string
+        description: Engine Oil Pressure in Bar.
+      driverName:
+        type: string
+        format: string
+        description: Drover name.
+
+
+  Repair:
+    type: object
+    properties:
+      type:
+        type: string
+        format: string
+        description: type of repair in high level
+
+  RepairWithDetail:
+    type: object
+    properties:
+      category:
+        type: string
+        format: string
+        description: Category of repair in high level
+      detail:
+        type: string
+        format: string
+        description: detail of repair
+      repairStation:
+        type: string
+        format: string
+        description: location/address of the repair station.
+      repairStationPhoneNumber:
+        type: string
+        format: string
+        description: repair station Phone Number.
+      date:
+        type: string
+        format: string
+        description: date of repair done
+      amount:
+        type: string
+        format: string
+        description: amount
+      fileUrl:
+        type: string
+        format: string
+        description: supporting file optional
+
+  RepairWithDetailRequest:
+    type: object
+    properties:
+      category:
+        type: string
+        format: string
+        description: Category of repair in high level
+      detail:
+        type: string
+        format: string
+        description: detail of repair
+      repairStation:
+        type: string
+        format: string
+        description: location/address of the repair station.
+      repairStationPhoneNumber:
+        type: string
+        format: string
+        description: repair station Phone Number.
+      date:
+        type: string
+        format: string
+        description: date of repair done
+      amount:
+        type: string
+        format: string
+        description: amount
+      file:
+        type: string
+        format: string
+        description: supporting file optional
+
+  AlertConfiguration:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: alert configureation id
+      alerts:
+        type: array
+        items:
+          $ref: '#/definitions/AlertInfo'
+
+  AlertInfo:
+    type: object
+    properties:
+      field:
+        type: string
+        format: string
+        description: filed name
+      value:
+        type: string
+        format: string
+        description: value
+      unit:
+        type: string
+        format: string
+        description: unit.
+      editable:
+        type: boolean
+        format: boolean
+        description: is field editable
+
+  VehicleAlerts:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      alerts:
+        type: array
+        items:
+          $ref: '#/definitions/GeneralAlert'
+
+  GeneralAlert:
+    type: object
+    properties:
+      alertId:
+        type: string
+        format: number
+        description: Alert id.
+      priority:
+        type: string
+        format: string
+        description: Alert priority.
+      alertName:
+        type: string
+        format: string
+        description: Alert Name.
+      dateTime:
+        type: string
+        format : date-time
+        description: alert time stamp.
+      location:
+        $ref: '#/definitions/Location'
+
+  Dealer:
+    type: object
+    properties:
+      dealerId:
+        type: string
+        format: string
+        description: dealer Id.
+      name:
+        type: string
+        format: string
+        description: name of the dealer.
+      location:
+        $ref: '#/definitions/Location'
+      address:
+        type: string
+        format: string
+        description: address of dealer.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+  ServiceProvider:
+    type: object
+    properties:
+      serviceProviderId:
+        type: string
+        format: string
+        description: ServiceProvider Id.
+      name:
+        type: string
+        format: string
+        description: name of the Service Provider.
+      location:
+        $ref: '#/definitions/Location'
+      address:
+        type: string
+        format: string
+        description: address of the Service Provider.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+
+  Spare:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: spare id.
+      spareName:
+        type: string
+        format: string
+        description: Spare name.
+      details:
+        type: string
+        format: string
+        description: spare details.
+      available:
+        type: string
+        format: string
+        description: spare available.
+      description:
+        type: string
+        format: string
+        description: spare description.
+
+  SparesWithRequestId:
+    type: object
+    properties:
+      spares:
+        type: array
+        items:
+          $ref: '#/definitions/Spare'
+      dealer:
+        $ref: '#/definitions/Dealer'
+      requestId:
+        type: string
+        format: string
+        description: request ID
+
+  SparesWithServiceLocation:
+    type: object
+    properties:
+      spares:
+        type: array
+        items:
+          $ref: '#/definitions/Spare'
+      dealer:
+        $ref: '#/definitions/Dealer'
+      serviceLocation:
+        $ref: '#/definitions/ServiceProvider'
+      requestId:
+        type: string
+        format: string
+        description: request ID
+
+
+
+  LoginSuccessResponse:
+    type: object
+    properties:
+      jwt:
+        type: string
+        format: string
+        description: valid session token.
+      serviceId:
+        type: string
+        format: string
+        description: service iD
+      serviceAvailable:
+        type: array
+        items:
+          type: string
+
+  service:
+    type: object
+    properties:
+      name:
+        type: string
+        format: string
+        description: name of the service.
+
+  services:
+    type: object
+    properties:
+      name:
+        type: string
+        format: string
+        description: name of the service.
+      role:
+        type: string
+        format: string
+        description: name of the role.
+      roledata:
+        type: array
+        items:
+          $ref: '#/definitions/userRoleData'
+  userRoleData:
+    type: object
+    properties:
+      template1:
+        $ref: '#/definitions/Template1'
+      template2:
+        $ref: '#/definitions/Template2'
+      template3:
+        $ref: '#/definitions/Template3'
+  role:
+    type: string
+    format: string
+    description: valid role
+
+  Template1:
+    type: object
+    properties:
+      chartHeading:
+        type: string
+        format: string
+        description: chart heading.
+      dataObject:
+        type: array
+        items:
+          $ref: '#/definitions/Data'
+  Template2:
+    type: object
+    properties:
+      listHeading:
+        type: string
+        format: string
+        description: list heading.
+      dataObject:
+        type: array
+        items:
+          $ref: '#/definitions/DataObject'
+
+  Template3:
+    type: object
+    properties:
+      dataObject:
+        type: array
+        items:
+          $ref: '#/definitions/templateData'
+
+  templateData:
+    type: object
+    properties:
+      cardHeading:
+        type: string
+        format: string
+        description: card heading.
+      cardIcon:
+        type: string
+        format: string
+        description: card icon.
+      cardColor:
+        type: string
+        format: string
+        description: card color in rgba value.
+      cardMessage:
+        type: string
+        format: string
+        description: card message.
+
+  DataObject:
+    type: object
+    properties:
+      alertTitle:
+        type: string
+        format: string
+        description: alert title.
+      dataObject:
+        type: array
+        items:
+          $ref: '#/definitions/Data'
+
+  JourneySummary:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      status:
+        type: string
+        format: string
+        description: status of vehicle
+      startTime:
+        type: string
+        format: datetime
+        description: start time of vehicle
+      endTime:
+        type: string
+        format: datetime
+        description: end time of vehicle
+      driverName:
+        type: string
+        format: string
+        description: driver name
+      tripId:
+        type: string
+        format: string
+        description: tripId
+      tripName:
+        type: string
+        format: string
+        description: trip name
+      tripCost:
+        $ref: '#/definitions/Cost'
+
+  Cost:
+    type: object
+    properties:
+      planned:
+        type: string
+        format: string
+        description: planned.
+      actual:
+        type: string
+        format: string
+        description: planned.
+
+  ReportSummary:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      availableReports:
+        type: array
+        items:
+          type: string
+          description: list of available reports.
+      vehicleMovement:
+        $ref: '#/definitions/VehicleMovement'
+      vehicleHealth:
+        $ref: '#/definitions/VehicleHealth'
+      delivery:
+        $ref: '#/definitions/Delivery'
+
+
+
+  VehicleMovement:
+    type: object
+    properties:
+      currentMonthDistance:
+        type: string
+        format: string
+        description: Current month Vehicle Movement.
+      previousMonthDistance:
+        type: string
+        format: string
+        description: Previous month Vehicle Movement.
+      currentMonthTotalUsage:
+        type: string
+        format: string
+        description: Current month Total Usage.
+      previousMonthTotalUsage:
+        type: string
+        format: string
+        description: Previous month Total Usage.
+      currentMonthIdleTime:
+        type: string
+        format: string
+        description: Current month Idle Time.
+      previousMonthIdleTime:
+        type: string
+        format: string
+        description: Previous month Idle Time.
+
+  VehicleHealth:
+    type: object
+    properties:
+      totalBreakdownsOccurred:
+        type: string
+        format: string
+        description:  Total breakdowns occurred.
+      totalBreakdownsClosed:
+        type: string
+        format: string
+        description:  Total Breakdowns Closed.
+      count:
+        type: array
+        items:
+          $ref: '#/definitions/Attribute'
+
+  Delivery:
+    type: object
+    properties:
+      planned:
+        type: string
+        format: string
+        description: planned delivery.
+      actual:
+        type: string
+        format: string
+        description: actual delivery.
+      currentMonthUtilizationPercentage:
+        type: string
+        format:  string
+        description: Current Month Utilization Percentage.
+      previousMonthUtilizationPercentage:
+        type: string
+        format:  string
+        description: previous month Utilization Percentage.
+      currentMonthDeliveries:
+        type: integer
+        format:  int64
+        description: Current Month number of deliveries.
+      previousMonthDeliveries:
+        type: integer
+        format:  int64
+        description: previous month number of deliveries.
+      driverComparision:
+        type: array
+        items:
+          $ref: '#/definitions/DriverComparison'
+
+
+  DriverComparison:
+    type: object
+    properties:
+      driverId:
+        type: string
+        format: string
+        description: driver id
+      driverName:
+        type: string
+        format: string
+        description: driver name.
+      driverRank:
+        type: integer
+        format: int32
+        description: driver rank for time period.
+      distanceCovered:
+        type: integer
+        format: int32
+        description: distance covered with in time period.
+
+  ReportByVehicle:
+    type: object
+    properties:
+      summary:
+        $ref: '#/definitions/DetailedVehiclesummary'
+      detailed:
+        type: array
+        items:
+          $ref: '#/definitions/ReportFormat'
+      distanceTravelled:
+        type: string
+        format: string
+        description: vehicle distance travelled.
+      averageSpeed:
+        type: string
+        format: string
+        description: vehicle average speed.
+      drivingTime:
+        type: string
+        format: string
+        description: vehicle driving time.
+      idleTime:
+        type: string
+        format: string
+        description: vehicle idle time.
+      usageTime:
+        type: string
+        format: string
+        description: vehicle usage time.
+
+
+  ReportFormat:
+    type: object
+    properties:
+      title:
+        type: string
+        format: string
+        description: Title of report format.
+      type:
+        type: string
+        format: string
+        description: Report Format Type.
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/ReportChart'
+  ReportChart:
+    type: object
+    properties:
+      name:
+        type: string
+        format: string
+        description: name.
+      value:
+        type: string
+        format: string
+        description: value.
+      unit:
+        type: string
+        format: string
+        description: unit.
+
+  DetailedVehiclesummary:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      period:
+        type: string
+        format: string
+        description: summary time period.
+      distanceTravelled:
+        type: string
+        format: string
+        description: Distance Travelled in KM.
+      averageSpeed:
+        type: string
+        format: string
+        description: Average Speed in KMPH.
+      drivingTime:
+        type: string
+        format: string
+        description: Driving Time in Hours & Mins.
+      idleTime:
+        type: string
+        format: string
+        description: Idle Time in Hours & Mins.
+      usageTime:
+        type: string
+        format: string
+        description: Usage Time in Hours & Mins.
+      status:
+        type: string
+        format: string
+        description: status of vehicle
+
+
+  Reminders:
+     type: object
+     properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle Reg No.
+      attributes:
+        type: array
+        items:
+          $ref: '#/definitions/Attribute'
+  Attributes:
+    type: object
+    properties:
+      field:
+        type: string
+        format: string
+        description: field
+      value:
+        type: string
+        format: string
+        description: field value.
+      attribute:
+        type: array
+        items:
+          $ref: '#/definitions/Attribute'
+  Attribute:
+    type: object
+    properties:
+      field:
+        type: string
+        format: string
+        description: attribute name.
+      value:
+        type: string
+        format: string
+        description:  Attribute value
+      type:
+        type: string
+        format: string
+        description:  Attribute Type
+      editable:
+        type: boolean
+        format: boolean
+        description: return whether field is editable or not.
+
+  AttributeInfo:
+    type: object
+    properties:
+      value:
+        type: string
+        format: string
+        description:  Attribute value
+      type:
+        type: string
+        format: string
+        description:  Attribute Type
+      editable:
+        type: boolean
+        format: boolean
+        description: return whether field is editable or not.
+  Data:
+    type: object
+    properties:
+      title:
+        type: string
+        format: string
+        description: title name.
+      value:
+        type: string
+        format: string
+        description:  value.
+      type:
+        type: string
+        format: string
+        description: Type.
+      editable:
+        type: boolean
+        format: boolean
+        description: return whether field is editable or not.
+
+  Driver:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: Driver user name.
+      firstName:
+        type: string
+        format: string
+        description: Driver first name.
+      lastName:
+        type: string
+        format: string
+        description: Driver last name.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+      address:
+        type: string
+        format: string
+        description: Driver address.
+
+  DriverProfile:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: Driver user name.
+      password:
+        type: string
+        format: string
+        description: Driver password.
+      firstName:
+        type: string
+        format: string
+        description: Driver first name.
+      lastName:
+        type: string
+        format: string
+        description: Driver last name.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+      address:
+        type: string
+        format: string
+        description: Driver address.
+      idProof:
+        type: string
+        format: string
+        description: Driver id Proof.
+      file:
+        type: string
+        format: string
+        description: Driver file.
+      email:
+        type: string
+        format: string
+        description: Driver email.
+      benchmarkFE:
+        type: string
+        format: string
+        description: Driver benchmark FE.
+      benchmarkDistance:
+        type: number
+        format: int64
+        description: Driver benchmark distance.
+      ranking:
+        type: string
+        format: string
+        description: driver rank.
+      assignedVehicles:
+        type: array
+        items:
+          type: string
+          format: string
+          description: veicle registration number
+
+  DriverProfileInformation:
+    type: object
+    properties:
+      id:
+         $ref: '#/definitions/AttributeInfo'
+      firstName:
+        $ref: '#/definitions/AttributeInfo'
+      lastName:
+         $ref: '#/definitions/AttributeInfo'
+      contactNumber:
+         $ref: '#/definitions/AttributeInfo'
+      address:
+         $ref: '#/definitions/AttributeInfo'
+      idProof:
+         $ref: '#/definitions/AttributeInfo'
+      fileUrl:
+         $ref: '#/definitions/AttributeInfo'
+      email:
+         $ref: '#/definitions/AttributeInfo'
+      benchmarkFE:
+         $ref: '#/definitions/AttributeInfo'
+      benchmarkDistance:
+         $ref: '#/definitions/AttributeInfo'
+      ranking:
+         $ref: '#/definitions/AttributeInfo'
+      assignedVehicles:
+        type: array
+        items:
+          type: string
+          format: string
+          description: veicle registration number
+
+  UserProfile:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: user name.
+      firstName:
+        type: string
+        format: string
+        description: first name.
+      lastName:
+        type: string
+        format: string
+        description: last name.
+      contactNumber:
+        type: integer
+        format: int64
+        description: contact number.
+      address:
+        type: string
+        format: string
+        description: address.
+      idProof:
+        type: string
+        format: string
+        description: id Proof.
+      file:
+        type: string
+        format: string
+        description: file.
+      email:
+        type: string
+        format: string
+        description: email.
+
+  UserProfileInformation:
+    type: object
+    properties:
+      id:
+         $ref: '#/definitions/AttributeInfo'
+      firstName:
+        $ref: '#/definitions/AttributeInfo'
+      lastName:
+         $ref: '#/definitions/AttributeInfo'
+      contactNumber:
+         $ref: '#/definitions/AttributeInfo'
+      address:
+         $ref: '#/definitions/AttributeInfo'
+      idProof:
+         $ref: '#/definitions/AttributeInfo'
+      fileUrl:
+         $ref: '#/definitions/AttributeInfo'
+      email:
+         $ref: '#/definitions/AttributeInfo'
+
+
+  VehicleInfo:
+    type: object
+    properties:
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      startDate:
+        type: string
+        format: date
+        description: startDate of the vehicle.
+      endDate:
+        type: string
+        format: date
+        description: endDate of the vehicle.
+      type:
+        type: string
+        format: string
+        description: Type of Bound
+        enum: [
+          "In Bound",
+          "Out Bound"
+          ]
+  VehicleInfoWithID:
+    type: object
+    properties:
+      id:
+        type: string
+        format: string
+        description: vehicle ID.
+      vehicleRegNo:
+        type: string
+        format: string
+        description: vehicle registration number.
+      geoFenceName:
+        type: string
+        format: string
+        description: geofence Name
+      startDate:
+        type: string
+        format: date
+        description: startDate the vehicle
+      endDate:
+        type: string
+        format: date
+        description: endDate the vehicle
+      type:
+        type: string
+        format: string
+        description: Type of Bound
+        enum: [
+          "In Bound",
+          "Out Bound"
+          ]
+
+  UserGroup:
+    type: object
+    properties:
+      usergroupid:
+        type: string
+        format: string
+        description: user group id
+      groupName:
+        type: string
+        format: string
+        description: user group name.
+      roles:
+        type: array
+        items:
+          $ref: '#/definitions/role'
+      users:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+  User:
+    type: object
+    properties:
+      name:
+        type: string
+        format: string
+        description: user name
+      userId:
+        type: string
+        format: string
+        description: user userId
+
+  ExpenseType:
+    type: object
+    properties:
+      label:
+        type: string
+        format: string
+        description: expense name
+
+
+  ExpenseSummary:
+    type: object
+    properties:
+      tripName:
+        type: string
+        format: string
+        description: trip name
+      startDate:
+        type: string
+        format: date
+        description: date
+      endDate:
+        type: string
+        format: date
+        description: date
+      tripStatus:
+        type: string
+        format: string
+        description: trip status
+      expense:
+        type: array
+        items:
+         $ref: '#/definitions/ExpenseInfo'
+
+  ExpenseDetails:
+    type: object
+    properties:
+      tripName:
+        type: string
+        format: string
+        description: trip name
+      startDate:
+        type: string
+        format: date
+        description: date
+      endDate:
+        type: string
+        format: date
+        description: date
+      tripStatus:
+        type: string
+        format: string
+        description: trip status
+      expense:
+        type: array
+        items:
+         $ref: '#/definitions/Expense'
+
+  ExpenseInfo:
+    type: object
+    properties:
+      label:
+        type: string
+        format: string
+        description: expense name
+      value:
+        type: string
+        format: string
+        description: expense value.
+
+  Expense:
+    type: object
+    properties:
+      label:
+        type: string
+        format: string
+        description: expense name
+      value:
+        type: string
+        format: string
+        description: expense value.
+      date:
+        type: string
+        format: date
+        description: date.
+      createdBy:
+        type: string
+        format: string
+        description: expense creator user id.
+
+  LoginError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: Error code.
+      message:
+        type: string
+        description: Invalid Credentials.
+  BadRequest:
+    type: object
+    properties:
+      message:
+        type: string
+        description: A bad request; generally, one or more parameters passed in were incorrect or missing.
+  AuthFailed:
+    type: object
+    properties:
+      message:
+        type: string
+        description: The authentication failed.
+  ServerError:
+    type: object
+    properties:
+      message:
+        type: string
+        description: A server error.
+  RateLimitError:
+    type: object
+    properties:
+      message:
+        type: string
+        description: The client has exceeded the number of daily calls as per their rate limit. For now, this only applies to prototype applications and untrusted clients. Trusted clients will never be rate-limited, nor will any production apps.
+  MaintenanceError:
+    type: object
+    properties:
+      message:
+        type: string
+        description: The system is undergoing maintenance and we are unable to fulfill this request. Look for Retry-After in the header to see the predicted time the system will be back up.
+  RedirectURL:
+    type: object
+    properties:
+      message:
+        type: string
+        description: The correct parameters were passed in and we are redirecting to the authentication page; OR, a valid `redirect_uri` was supplied but there was another error, and the error type and message are embedded in the querystring.
