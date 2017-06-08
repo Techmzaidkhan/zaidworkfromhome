@@ -1,0 +1,1685 @@
+{
+	"id": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+	"name": "9 May Farm APIs PRE",
+	"description": "",
+	"order": [
+		"2aaafa64-ddbe-7c6a-62ff-906edef81d4a",
+		"a55f5586-c783-6535-d332-b9a0d451675a",
+		"9fecc012-a959-8974-81d1-1e498be3476d",
+		"9020e169-c32e-db97-7837-a01f1290c155",
+		"fad1109b-e982-02d9-cd0a-48418f086684",
+		"466de338-1a97-b96c-6184-51e1099145d9",
+		"ef1c44ed-39c4-a7ea-d0f0-35fe7d28b9e3",
+		"65ee5b7b-748c-e9e2-aa40-cd6cfb607238",
+		"79b8426c-6ded-c974-33c2-96bed48e79af",
+		"0591adcb-9b5d-ab44-0ae6-44a5aba89fdc",
+		"1dbf3569-d687-5a2b-f38c-5d301fa479ad",
+		"0984c63b-0921-f031-b216-faa7e073ce63",
+		"b5c32835-0245-d9ea-145a-d7f7a1c5b916",
+		"45b1eb02-ffdd-9089-717d-3b0295bc1b4f",
+		"ab643c66-e694-faf5-e578-c8c86d6132e2",
+		"180e2902-c206-5253-bb46-be1f2ed1a6ca",
+		"d1fc89ab-42d0-d9ee-3915-e6627123b2d5",
+		"fe7f2bc3-df92-8fee-6f1a-70f65debfac8",
+		"2e266409-6edc-5dff-a5e6-0fa20f0ccf68",
+		"4072166e-7e46-8512-b655-4340cb2c7992",
+		"8a93498c-2733-e6d9-3d95-acb1d257a189",
+		"dceff756-8a8b-e6d4-953d-c3d18fb6627d",
+		"c20462d7-67d0-3319-5a9e-7008c3748330",
+		"ab99e244-60a1-e05e-e769-d99cbba8cb45",
+		"3fc17ac7-2326-25ab-43fb-a3f21a1569fa",
+		"a597053e-465d-ca98-7e28-72e5ff9c2e39",
+		"326031e9-e4fa-0dce-f0a4-66024f46878f",
+		"00d5d3dd-0133-f5c0-64c9-128f38328672",
+		"91541d67-90ff-d57f-cd68-5e233bbbf9d4",
+		"2eb3a301-c214-52e0-b4f6-70106917bac0",
+		"958b1dac-4371-be68-9bd4-2dc52972fe50",
+		"451e9986-e61f-8378-ba96-d3b0233f35e7",
+		"32ab3386-3d17-587d-f6ff-db35a5e364f0",
+		"b3286b15-14ae-12a2-2f58-ff9436c23c21",
+		"7948b686-6f61-2dc1-2127-d4bf43c23b06",
+		"f912eef2-c10b-149e-2974-0e461222db50",
+		"39371f52-043f-eb1d-fc54-682a1aca7ba4",
+		"0c2b3f18-2ad2-ef14-4b19-859ff490be3c",
+		"70c2dd69-6eb1-3e2b-2abb-eb80ca15a556",
+		"0d58120a-5c18-70ec-68f6-c84b83fc7509",
+		"4f43dcd8-d35c-a63a-35ec-3c5b748745c8"
+	],
+	"folders": [],
+	"timestamp": 1494307300888,
+	"owner": "1138289",
+	"public": false,
+	"requests": [
+		{
+			"id": "00d5d3dd-0133-f5c0-64c9-128f38328672",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apireport/platform/farm/vehiclemovement/enginehours//TN 03 MM 1001/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899961191,
+			"name": "GET /report/platform/farm/vehiclemovement/usagehours/",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "0591adcb-9b5d-ab44-0ae6-44a5aba89fdc",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/listVehicles/farm",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899889772,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiListVehicles/farm",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "0984c63b-0921-f031-b216-faa7e073ce63",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/liveVehicleInformation/TN 26 FM 5523",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496911422224,
+			"name": "api/LiveVehicleInforamtion/{vehicleRegNo}",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "0c2b3f18-2ad2-ef14-4b19-859ff490be3c",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/LocationHistory/TN 01 B 1945?StartDate=2015-02-12&EndDate=2017-06-01",
+			"queryParams": [
+				{
+					"key": "StartDate",
+					"value": "2015-02-12",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "EndDate",
+					"value": "2017-06-01",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899999154,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/LocationHistory/TN 01 B 1945?StartDate=2015-02-12&EndDate=2017-06-01",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "0d58120a-5c18-70ec-68f6-c84b83fc7509",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apireport/platform/farm/vehiclemovement/enginehours//TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496900007041,
+			"name": "report/platform/farm/vehiclemovement/enginehours/",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "180e2902-c206-5253-bb46-be1f2ed1a6ca",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apigeofence",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899913542,
+			"name": "get GeoFence",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[{\r\n    \"name\": \"pointq\",\r\n    \"points\": [\r\n      {\r\n        \"longitude\": 83.496093,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]\r\n}\r\n\r\n\r\n]"
+		},
+		{
+			"id": "1dbf3569-d687-5a2b-f38c-5d301fa479ad",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiLocationHistory/TN 26 FM 5523/?startDate=2016-05-22 00:00:00&endDate=2016-06-30 23:59:59",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2016-05-22 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2016-06-30 23:59:59",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899893921,
+			"name": "api/LocationHistory/{vehicleRegNo}",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "2aaafa64-ddbe-7c6a-62ff-906edef81d4a",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6IktpbmdLaGFuIiwicm9sZSI6IkRpZ2lTZW5zZSBSb2xlcyIsImlzcyI6IkRpZ2lTZW5zZSBUZWNoIE1haGluZHJhIiwiYXVkIjoiaHR0cDovL3d3dy50ZWNobWFoaW5kcmEuY29tIiwiZXhwIjoxNDkzMDE4ODY2LCJuYmYiOjE0OTMwMTcwNjZ9.gZb3MZ8CWAp3R8omcnxIQ2LrGhwYQdDZ2xPK9q17zew\nContent-Type: application/json\n",
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apilogin",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495689033180,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apilogin",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@123\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "2e266409-6edc-5dff-a5e6-0fa20f0ccf68",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/geofence/fd20",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496927933386,
+			"name": "patch GeoFence",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "2eb3a301-c214-52e0-b4f6-70106917bac0",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apireport/platform/farm/alerts/vehiclealerts//TN 01 MM 9554/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899968776,
+			"name": "vehilce Usage Hours",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "326031e9-e4fa-0dce-f0a4-66024f46878f",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apivehiclesSummary/TN 26 FM 5523",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899957595,
+			"name": "exceptional",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "32ab3386-3d17-587d-f6ff-db35a5e364f0",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/login",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899980635,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/login",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"email\": \"an00355048@techmahindra.com\",\r\n  \"phoneNumber\": 88482948521\r\n}"
+		},
+		{
+			"id": "39371f52-043f-eb1d-fc54-682a1aca7ba4",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuatfghnhgfjghjhg",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899995579,
+			"name": "vehivcles hours",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "3fc17ac7-2326-25ab-43fb-a3f21a1569fa",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/report/platform/farm/vehiclemovement/vehicleutilization/TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899950594,
+			"name": "/report/platform/farm/vehiclemovement/vehicleutilization/{vehicleRegNo}",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "4072166e-7e46-8512-b655-4340cb2c7992",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apigeofence/vehicles",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899930661,
+			"name": "Get /geofence/vehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "451e9986-e61f-8378-ba96-d3b0233f35e7",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/reportSummary/platform/mtbd",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899975451,
+			"name": "/reportSummary/platform/mtbd",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": []
+		},
+		{
+			"id": "45b1eb02-ffdd-9089-717d-3b0295bc1b4f",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/profile",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496913991333,
+			"name": "api/profile",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n  {\r\n    \"field\": \"firstName\",\r\n    \"value\": \"Zaid\",\r\n    \"type\": \"99786\",\r\n    \"editable\": true\r\n  }\r\n]"
+		},
+		{
+			"id": "466de338-1a97-b96c-6184-51e1099145d9",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/vehicleAlerts/TN 26 FM 5523/?startDate=2016-01-01 00:00:00&endDate=2017-04-30 00:00:00 ",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2016-01-01 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-04-30 00:00:00 ",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496913106014,
+			"name": "alert/vehilceRegNo/?",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "4f43dcd8-d35c-a63a-35ec-3c5b748745c8",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/geofence/fd19",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"data": [],
+			"dataMode": "raw",
+			"name": "delete GeoFence/{name}",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1496926273252,
+			"version": 2,
+			"responses": [],
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "[{\r\n    \"name\": \"pointq\",\r\n    \"points\": [\r\n      {\r\n        \"longitude\": 83.496093,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]\r\n}\r\n\r\n\r\n]"
+		},
+		{
+			"id": "65ee5b7b-748c-e9e2-aa40-cd6cfb607238",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/vehiclesSummary/TN 26 FM 5523",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496910896222,
+			"name": "vehicle Summary",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "70c2dd69-6eb1-3e2b-2abb-eb80ca15a556",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/LocationHistory/TN 01 B 1945?StartDate=2015-02-12&EndDate=2017-06-01",
+			"queryParams": [
+				{
+					"key": "StartDate",
+					"value": "2015-02-12",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "EndDate",
+					"value": "2017-06-01",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496900002871,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/LocationHistory/TN 01 B 1945?StartDate=2015-02-12&EndDate=2017-06-01",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "7948b686-6f61-2dc1-2127-d4bf43c23b06",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/listVehicles",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899987728,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiListVehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "79b8426c-6ded-c974-33c2-96bed48e79af",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apilistVehicles/farm",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496911026167,
+			"name": "api/listVehicles/farm",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "8a93498c-2733-e6d9-3d95-acb1d257a189",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/geofence/techmhyd6/vehicles?startdate=2017-05-19 00:00:00&enddate=2017-05-26 00:00:00",
+			"queryParams": [
+				{
+					"key": "startdate",
+					"value": "2017-05-19 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "enddate",
+					"value": "2017-05-26 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899934275,
+			"name": "Get /geofence/{name}/vehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "9020e169-c32e-db97-7837-a01f1290c155",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api///changepassword",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494332942684,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/ChangePassword",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"email\": \"an00355048@techmahindra.com\",\r\n  \"phoneNumber\": 9482948521,\r\n  \"oldPassword\": \"Techm@123\",\r\n  \"newPassword\": \"Techm@1234\"\r\n}"
+		},
+		{
+			"id": "91541d67-90ff-d57f-cd68-5e233bbbf9d4",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apireport/platform/farm/alerts/vehiclealerts//TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899964721,
+			"name": "GET /report/platform/farm/alert",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "958b1dac-4371-be68-9bd4-2dc52972fe50",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/report/platform/farm/alerts/violation//TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899972227,
+			"name": "/report/platform/farm/alerts/violation/",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "9fecc012-a959-8974-81d1-1e498be3476d",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6IktpbmdLaGFuIiwicm9sZSI6IkRpZ2lTZW5zZSBSb2xlcyIsImlzcyI6IkRpZ2lTZW5zZSBUZWNoIE1haGluZHJhIiwiYXVkIjoiaHR0cDovL3d3dy50ZWNobWFoaW5kcmEuY29tIiwiZXhwIjoxNDkzMDE4ODY2LCJuYmYiOjE0OTMwMTcwNjZ9.gZb3MZ8CWAp3R8omcnxIQ2LrGhwYQdDZ2xPK9q17zew\nContent-Type: application/json\n",
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiresetpassword",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495610319311,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api//resetPasword",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"email\": \"an00355048@techmahindra.com\",\r\n  \"phoneNumber\": 9482948521,\r\n  \"newPassword\": \"Techm@123\",\r\n  \"otp\": \"4345435\"\r\n}\r\n\r\n"
+		},
+		{
+			"id": "a55f5586-c783-6535-d332-b9a0d451675a",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiforgotpassword",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495689085666,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/forgotpassword",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"email\": \"an00355048@techmahindra.com\",\r\n  \"phoneNumber\": 9482948521\r\n}"
+		},
+		{
+			"id": "a597053e-465d-ca98-7e28-72e5ff9c2e39",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/report/platform/farm/vehiclemovement/vehicleutilization//TN 03 MM 1001/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899954210,
+			"name": "GET /report/platform/farm/vehiclemovement/usagehours/",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "ab643c66-e694-faf5-e578-c8c86d6132e2",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/geofence",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496915019654,
+			"name": "Create GeoFence",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[{\r\n    \"name\": \"techmhyd10\",\r\n  \"points\": [\r\n      {\r\n        \"longitude\": \"78.814544677734375\",\r\n        \"latitude\": 13.006564840836528\r\n      },\r\n      {\r\n        \"longitude\": 78.899688720703125,\r\n        \"latitude\": 13.029310787537218\r\n      },\r\n      {\r\n        \"longitude\": 78.863296508789062,\r\n        \"latitude\": 12.989169473900081\r\n      }\r\n    ]\r\n}\r\n\r\n\r\n]"
+		},
+		{
+			"id": "ab99e244-60a1-e05e-e769-d99cbba8cb45",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/report/platform/farm/vehiclemovement/usagehours/TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-01-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-01-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899946338,
+			"name": "GET api/reportsummary/platform/farm   ",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "b3286b15-14ae-12a2-2f58-ff9436c23c21",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apibreakDown/AP 09 KU 9999\n",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899984338,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apibreakDown/AP 09 KU 9999",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"kingkhan\",\r\n  \"password\": \"Srk@0211\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "b5c32835-0245-d9ea-145a-d7f7a1c5b916",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiprofile",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899901667,
+			"name": "api/profile",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 79.43,\r\n        \"latitude\": 12.69\r\n      },\r\n      {\r\n        \"longitude\": 79.47,\r\n        \"latitude\": 12.73       \r\n      },\r\n      {\r\n        \"longitude\": 79.56,\r\n        \"latitude\": 12.717\r\n      }        \r\n    ]"
+		},
+		{
+			"id": "c20462d7-67d0-3319-5a9e-7008c3748330",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/geofence/techmhyd6/vehicles",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899941951,
+			"name": "delete /geofence/{name}/vehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n      {\r\n        \"longitude\": 83.1786,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]"
+		},
+		{
+			"id": "d1fc89ab-42d0-d9ee-3915-e6627123b2d5",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apigeofence/techmhyd111",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899918895,
+			"name": "get GeoFence/{name}",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[{\r\n    \"name\": \"pointq\",\r\n    \"points\": [\r\n      {\r\n        \"longitude\": 83.496093,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]\r\n}\r\n\r\n\r\n]"
+		},
+		{
+			"id": "dceff756-8a8b-e6d4-953d-c3d18fb6627d",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/geofence/nn/vehicles",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899938349,
+			"name": "Put /geofence/points/vehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[\r\n  {\r\n    \"vehicleRegNo\": \"TN 26 FM 5523\",\r\n    \"startDate\": \"2017-05-19\",\r\n    \"endDate\": \"2017-05-26\",\r\n    \"type\": \"In Bound\"\r\n  }\r\n]"
+		},
+		{
+			"id": "ef1c44ed-39c4-a7ea-d0f0-35fe7d28b9e3",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/api/vehicleAlerts/?startDate=2016-01-01 00:00:00&endDate=2017-04-30 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2016-01-01 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-04-30 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496913002328,
+			"name": "alerts",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "f912eef2-c10b-149e-2974-0e461222db50",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/report/platform/farm/vehiclemovement/vehicleutilization//TN 26 FM 5523/?startDate=2017-01-21 00:00:00&endDate=2017-02-28 00:00:00",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2017-01-21 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2017-02-28 00:00:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899991518,
+			"name": "vehicle Utilization ",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "fad1109b-e982-02d9-cd0a-48418f086684",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImZvd25lciIsInJvbGUiOiJEaWdpU2Vuc2UgUm9sZXMiLCJpc3MiOiJEaWdpU2Vuc2UgVGVjaCBNYWhpbmRyYSIsImF1ZCI6Imh0dHA6Ly93d3cudGVjaG1haGluZHJhLmNvbSIsImV4cCI6MTQ5NDMwOTIzNiwibmJmIjoxNDk0MzA3NDM2fQ.Gxp7yLPuzmLNJTCdHcRSODLuozeMEzwRlilUHELhxkM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI//api/listVehicles",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496910824433,
+			"name": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apiListVehicles",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "{\r\n  \"username\": \"fowner\",\r\n  \"password\": \"Techm@1234\",\r\n  \"remember_me\": true\r\n}"
+		},
+		{
+			"id": "fe7f2bc3-df92-8fee-6f1a-70f65debfac8",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6Im1ydmZhcm0iLCJyb2xlIjoiRGlnaVNlbnNlIFJvbGVzIiwiaXNzIjoiRGlnaVNlbnNlIFRlY2ggTWFoaW5kcmEiLCJhdWQiOiJodHRwOi8vd3d3LnRlY2htYWhpbmRyYS5jb20iLCJleHAiOjE0OTU3NjcwNzUsIm5iZiI6MTQ5NTc2NTI3NX0.ZI1LYCjOTpqZEn3GkrZ29PxTZ3V-FdJDMdU6o8JCLgg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI_preuat/apigeofence",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "// Load Postman BDD\neval(globals.postmanBDD);\neval(globals.tv4);\n\ndescribe('Get DeleteDriver Info', function() {\n    it('Should Return DeleteDriver Info', function() {\n       response.should.have.status(200);\n       response.should.be.json;\n       response.body.should.not.be.empty;\n    });\n     it('Should Have a Valid DeleteDriverMessage  ', function() {\n      var alertResponse = response.body;\n      alertResponse.should.be.an('object');\n      alertResponse.should.have.property('Message').and.not.empty;\n     \n     });\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496899922360,
+			"name": "get GeoFence",
+			"description": "",
+			"collectionId": "4ca5d4c5-254d-d714-c23c-3efcecb2caaf",
+			"responses": [],
+			"rawModeData": "[{\r\n    \"name\": \"pointq\",\r\n    \"points\": [\r\n      {\r\n        \"longitude\": 83.496093,\r\n        \"latitude\": 23.644524    \r\n      },\r\n      {\r\n        \"longitude\": 18.320837,\r\n        \"latitude\": 73.166199     \r\n      },\r\n      {\r\n        \"longitude\": 18.338986,\r\n        \"latitude\": 73.460083\r\n      }       \r\n \r\n    ]\r\n}\r\n\r\n\r\n]"
+		}
+	]
+}
