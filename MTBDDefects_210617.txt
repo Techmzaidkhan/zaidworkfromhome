@@ -1,0 +1,223 @@
+1.{
+:   "totalBreakdownsOccurred":1,
+:   "totalBreakdownsClosed":49,
+:   "vehilcehealth":
+:   {
+:   :   "good":0,
+:   :   "bad":1,
+:   :   "warning":0
+:   }
+}
+
+Only 1 is in bad condition.So what about the other vehicle?
+
+
+_______________________________________________________________________________________________________________________
+2.cant find below URI in swagger
+GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/mtbd/vehiclemovement/vehiclemovementreport/AP 09 KU 9999?startdate=2017-05-10&enddate=2017-05-24
+
+but the data started as  
+"labels":
+:   :   [
+:   :   :   "2017-05-11",
+
+________________________________________________________________________________________________________________________
+
+3.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/mtbd/alerts/violation/AP 09 KU 9999?startdate=2016-09-06&enddate=2016-09-10
+
+"label":"GeofenceAlert" it should be "label":"GeofenceAlerts"
+
+________________________________________________________________________________________________________________________
+
+4.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/vehicleAlerts/AP 09 KU 9999?startdate=2017-05-01&enddate=2017-05-17
+
+[
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-03 10:19:59"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-03 11:35:32"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-03 14:13:38"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-03 14:19:39"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-03 15:28:21"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-11 16:55:05"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-11 18:18:53"
+:   },
+:   {
+:   :   "alertId":"9",
+:   :   "alertName":"Breakdown",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Emergency",
+:   :   "dateTime":"2017-05-12 15:18:41"
+:   }
+]
+
+Then i have run
+GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/mtbd/alerts/vehiclealerts/AP 09 KU 9999?startdate=2017-05-01&enddate=2017-05-17
+
+{
+:   "data":
+:   {
+:   :   "labels":
+:   :   [
+:   :   :   "2017-05-01",
+:   :   :   "2017-05-02",
+:   :   :   "2017-05-03",
+:   :   :   "2017-05-04",
+:   :   :   "2017-05-05",
+:   :   :   "2017-05-06",
+:   :   :   "2017-05-07",
+:   :   :   "2017-05-08",
+:   :   :   "2017-05-09",
+:   :   :   "2017-05-10",
+:   :   :   "2017-05-11",
+:   :   :   "2017-05-12",
+:   :   :   "2017-05-13",
+:   :   :   "2017-05-14",
+:   :   :   "2017-05-15",
+:   :   :   "2017-05-16",
+:   :   :   "2017-05-17"
+:   :   ],
+:   :   "datasets":
+:   :   [
+:   :   :   {
+:   :   :   :   "label":"BreakdownAlerts",
+:   :   :   :   "data":
+:   :   :   :   [
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   1,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   1,
+:   :   :   :   :   1,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   0,
+:   :   :   :   :   1
+:   :   :   :   ],
+:   :   :   :   "backgroundColor":"#ce343d"
+:   :   :   },
+
+It is showing breakdown on 2017-05-17 but in alert API.
+
+___________________________________________________________________________________________________________________
+
+5.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/vehicleAlerts/AP 09 KU 9999?startdate=2016-09-06&enddate=2016-09-10
+
+In response there is-
+"alertId":"28",
+:   :   "alertName":"Insurance Payment Due",
+:   :   "location":
+:   :   {
+:   :   :   "longitude":79.23416,
+:   :   :   "latitude":12.94271
+:   :   },
+:   :   "priority":"Low",
+:   :   "dateTime":"2016-09-07 21:41:30"
+:   },
+
+GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/mtbd/alerts/vehiclealerts/AP 09 KU 9999?startdate=2016-09-06&enddate=2016-09-10
+
+   {
+                "label":"InsurancePaymentAlerts",
+                "data":
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "backgroundColor":"#6a2d6f"
+            }
+
+____________________
+
+6.DELETE https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/geofence/point5/vehicles
+
+DELETE data:
+["AP 09 KU 9999","TN 01 B 1945"]
+
+Got {"Message":"Success"} though TN 01 B 1945 is not listed under this user.
+
+_________________
+
+
+

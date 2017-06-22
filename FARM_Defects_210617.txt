@@ -1,0 +1,67 @@
+1.listvehicles/farm-
+
+In swagger it is mentioned speed and driverName.
+
+_________________________________________________________________________________________________________________
+
+2.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/farm/vehicleusage/usagehoursreport/TN 01 B 1945?startdate=2015-09-06&enddate=2017-09-06
+
+Response is-
+{
+:   "data":null,
+:   "chartType":null,
+:   "options":null
+}
+
+______________________________________________________________________________________________________________________
+
+3.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/report/platform/farm/vehicleusage/vehicleutilizationreport/TN 01 B 1945?startdate=2015-10-06&enddate=2015-12-30
+
+It shows data from   
+"labels":
+:   :   [
+:   :   :   "2015-11-06",
+
+___________________________________________________________________________________________________________________
+
+4.In the reports API's where scales is mentioned  "display": "True",but in response is  "display": "true",
+
+______________________________________________________________________________________________________________________
+
+5.PUT https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/geofence/NewGeo1/vehicles
+
+PUT data:
+[
+  {
+     "vehicleRegNo": "TN 01 C 0718",
+    "startDate": "2017-05-01",
+    "endDate": "2017-06-20",
+    "type": "In bound"
+  }
+]
+
+It should not allow to Put if the end date<today's date.
+__________________________________________________________________________________________________________________
+
+6.DELETE https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/geofence/NewGeo1/vehicles
+
+DELETE data:
+["TN 01 C 0718","TN 01 B 1945"]
+It gives{
+:   "Message":"Success"
+}
+for non-existing vehicleregno.
+
+_________________________________________________________________________________________________________________
+
+7.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/geofence/NewGeo1/vehicles?startdate=2017-05-11&enddate=2017-06-09
+
+Response is
+{
+:   "Message":"Records not found."
+}
+But the vehicle is mapped from
+ "startDate": "2017-05-01",
+    "endDate": "2017-06-20",
+
+
