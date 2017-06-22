@@ -1,0 +1,49 @@
+1GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/listVehicles/AD
+
+:   :   "speed":null,
+:   :   "runningHours":null
+
+These are string and cannot be null.
+________________________________________________________________________________________
+
+2.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/liveVehicleInformation/AD/TN 30 CD 4420
+
+{
+  "Message":"The requested resource is not found"
+}
+
+but if i change the URL to
+
+GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/liveVehicleInformation/TN 30 CD 4420
+
+{
+:   "Message":"Object reference not set to an instance of an object."
+}
+_____________________________________________________________________________________________
+
+3.GET https://uat.mahindracloudlink.com/DigisenseMobileAPPAPI/api/vehiclesSummary/TN 30 CD 4420
+response has no data
+:   :   "totalUsage":"0",
+:   :   "vehicleRunningHours":"00h:00m:00s",
+:   :   "vehicleIdleHours":"00h:00m:00s"
+:   }
+]
+___________________________________________________________________________________________________
+4.Reports not working on UAT-Vehiclesummary,Usagetime,speed,vehiclealert,vehiclealertviolation,alertsummary and vehicleusage.
+______________________________________________________________________________________________
+
+5.GetGeofence and GetGeofenceMapped API's-In these time is not being validated for listing the geofence.Like today is 22nd june 2017 and the geofence got listed is 
+:   {
+:   :   "id":"974",
+:   :   "vehicleRegNo":"TN 25 D 4354",
+:   :   "geoFenceName":"hyd3",
+:   :   "startDate":"2017-02-02 00:00:00",
+:   :   "endDate":"2017-06-22 00:00:00",
+:   :   "type":""
+:   }
+
+This has end date as today but time is 00:00:00
+__________________________________________________________________________________________________
+
+
+
